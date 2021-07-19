@@ -61,6 +61,7 @@ namespace ACard
             catch
             {
                 System.IO.File.WriteAllText(savesPath, "[]");
+                Console.WriteLine("Something's wrong");
             }
             
 
@@ -126,7 +127,15 @@ namespace ACard
 
         private static void SwitchProfile(string game, string profile)
         {
-
+            int gameIndex = games.IndexOf(new Game(game));
+            if (gameIndex >= 0)
+            {
+                int profileIndex = games[gameIndex].Profiles.IndexOf(new Profile(profile));
+                if (profileIndex >= 0)
+                {
+                    System.IO.File.WriteAllText(games[gameIndex].Location, games[gameIndex].Profiles[profileIndex].Id);
+                }
+            }
         }
     }
 }

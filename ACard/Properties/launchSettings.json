@@ -6,6 +6,10 @@
     "add game ongeki path": {
       "commandName": "Project",
       "commandLineArgs": "add game ongeki path"
+    },
+    "switch test": {
+      "commandName": "Project",
+      "commandLineArgs": "switch chuni works?"
     }
   }
 }
