@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Text.Json;
 
@@ -40,6 +41,7 @@ namespace ACard
                     SwitchProfile(args[1], args[2]);
                     break;
             }
+            SaveData();
         }
 
         private static void LoadData()
@@ -49,12 +51,21 @@ namespace ACard
 
         private static void SaveData()
         {
-            System.IO.File.WriteAllText(".\\saves.json", JsonSerializer.Serialize(games));
+            System.IO.File.WriteAllText(".\\saves.json", JsonConvert.SerializeObject(games));
         }
 
         private static void AddGame(string name, string location)
         {
+            foreach (Game game in games)
+            {
+                if(game.Name == name)
+                {
+                    Console.WriteLine("Game already added.");
+                    break;
+                }
+            }
 
+            games.Add(new Game(name, location));
         }
 
         private static void AddProfile(string name, string id)

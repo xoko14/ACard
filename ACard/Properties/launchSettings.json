@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "ACard": {
+      "commandName": "Project"
+    },
+    "add game ongeki path": {
+      "commandName": "Project",
+      "commandLineArgs": "add game ongeki path"
+    }
+  }
+}
