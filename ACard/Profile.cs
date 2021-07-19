@@ -8,5 +8,11 @@ namespace ACard
     {
         public string Name { get; set; }
         public string Id { get; set; }
+
+        public Profile(string name, string id)
+        {
+            this.Name = name;
+            this.Id = id;
+        }
     }
 }
