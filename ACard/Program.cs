@@ -44,6 +44,20 @@ namespace ACard
                 case "switch":
                     SwitchProfile(args[1], args[2]);
                     break;
+
+                case "help":
+                    Console.WriteLine(
+                        "Arguments:\n" +
+                        "add\n" +
+                        "\tgame [name] [location of card id .txt]\n" +
+                        "\tprofile [name] [card id]\n" +
+                        "switch [game name] [profile name]\n"
+                        );
+                    break;
+
+                default:
+                    Console.WriteLine("Profile switcher for certain games.\n\"acard help\" for usage instructions.");
+                    break;
             }
             SaveData();
         }
